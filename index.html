@@ -22,6 +22,7 @@ Be able to correctly identify whether the user has the cold or allergies
 Known Issues:
 Getting the code to run
 Creating a new page
+Getting results
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -39,6 +40,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
+	var resultText = document.getElementById("results");
 
 
         function allergyAdd(){
@@ -144,17 +146,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 	<p>Are your symptoms seasonal or chronic?</p>
 		
-	<a href="#results" onclick="allergyAdd();"class="w3-btn w3-black w3-hover-grey w3-round">Yes</a>
+	<a href="#five" onclick="allergyAdd();"class="w3-btn w3-black w3-hover-grey w3-round">Yes</a>
 		
-	<a href="#results" onclick="coldAdd();"class="w3-btn w3-black w3-hover-grey w3-round">No</a>
+	<a href="#five" onclick="coldAdd();"class="w3-btn w3-black w3-hover-grey w3-round">No</a>
 	
 	</div>
 		
-	<div class="page" id="results">
+	<div class="page" id="five">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
-		var resultText = document.getElementById("results");
-	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+	
+		<p> id="results"</p>
+	<script>
+	   resultText.innerHTML = "Probability it is allergies=" + allergyPercent +"
+		Probability it is a cold" + coldPercent;
+	</script>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
